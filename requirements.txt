@@ -1,0 +1,11 @@
+llama-index-llms-anthropic==0.4.0
+llama-index-extractors-entity==0.3.1
+llama-index==0.12.5
+python-docx==1.1.2
+python-pptx==0.6.23
+openpyxl==3.1.4
+PyPDF2==3.0.1
+docx2txt
+ghostscript
+llama-index-readers-pdf-table
+pymupdf
