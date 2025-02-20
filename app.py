@@ -62,7 +62,7 @@ def build_pipeline():
 
 
 @app.get("/rule")
-def ner_rule(file_folder_path: str = './example'):
+async def ner_rule(file_folder_path: str = './example'):
     try:
         documents = SimpleDirectoryReader(file_folder, file_folder_path=file_extractor).load_data()
         print("Documents are charged successfully.")
@@ -76,7 +76,7 @@ def ner_rule(file_folder_path: str = './example'):
     return str(response)
 
 @app.post("/spacy")
-def ner_spacy(file_folder_path: str = './example'):
+async def ner_spacy(file_folder_path: str = './example'):
     try:
         documents = SimpleDirectoryReader(file_folder, file_folder_path=file_extractor).load_data()
         print("Documents are charged successfully.")
@@ -90,7 +90,7 @@ def ner_spacy(file_folder_path: str = './example'):
     return str(response)
 
 @app.get("/llm")
-def ner_llm(file_folder_path: str = './example', query: str = "What is Infuse Capital?"):
+async def ner_llm(file_folder_path: str = './example', query: str = "What is Infuse Capital?"):
     try:
         documents = SimpleDirectoryReader(file_folder, file_folder_path=file_extractor).load_data()
         print("Documents are charged successfully.")
