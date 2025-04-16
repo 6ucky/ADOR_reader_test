@@ -1,0 +1,58 @@
+1. "Why is Tableau ESG report not loading for Finance users?"
+→ Matches INC001
+
+
+2. "VPN connection fails, can't access CRM and SharePoint remotely."
+→ Matches INC002
+
+
+3. "Market Risk Dashboard takes too long to load reports."
+→ Matches INC003
+
+
+4. "I’m locked out of my AD account. Need help logging in."
+→ Matches REQ001
+
+
+5. "How can I get access to JIRA for the Payments project?"
+→ Matches REQ002
+
+
+6. "HR website is showing 500 server error this morning."
+→ Matches INC004
+
+
+7. "Lotus Notes keeps crashing when I open it."
+→ Matches INC005
+
+
+8. "Need access to Power BI compliance dashboards for monthly report."
+→ Matches REQ003
+
+
+9. "External emails are delayed for our audit team."
+→ Matches INC006
+
+
+10. "Why does the Intranet SSO keep saying token expired?"
+→ Matches INC007
+
+
+11. "Timeout error when loading Tableau ESG dashboards."
+→ Also maps to INC001 (different phrasing)
+
+
+12. "Employees can’t access the HR portal — internal site down?"
+→ Another variation of INC004
+
+
+13. "Benali Fatima AD account needs to be unlocked."
+→ Short entity-based form for REQ001
+
+
+14. "Email system is slow — audit department not receiving messages."
+→ Another form of INC006
+
+
+15. "SSO authentication failing — Intranet not accessible."
+→ Alternate for INC007
