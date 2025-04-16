@@ -1,0 +1,46 @@
+[
+  {
+    "ticket_id": "INC100",
+    "subject": "Tableau dashboards failing to load",
+    "description": "Users in the Finance team report issues accessing ESG dashboards on Tableau. Timeout after 30 seconds.",
+    "entities": {
+      "tool": "Tableau",
+      "dataset": "ESG",
+      "department": "Finance",
+      "error": "Timeout"
+    }
+  },
+  {
+    "ticket_id": "INC101",
+    "subject": "Power BI dashboards slow for Compliance",
+    "description": "Compliance users face delays when opening dashboards in Power BI. No error message, just long load times.",
+    "entities": {
+      "tool": "Power BI",
+      "dashboard": "Compliance Reports",
+      "department": "Compliance",
+      "symptom": "Slow Performance"
+    }
+  },
+  {
+    "ticket_id": "INC102",
+    "subject": "HR Portal down",
+    "description": "500 server error when accessing the internal HR portal at https://hr.bnpparibas.com. Reported by HR users.",
+    "entities": {
+      "system": "HR Portal",
+      "error_code": "500",
+      "url": "https://hr.bnpparibas.com",
+      "department": "HR"
+    }
+  },
+  {
+    "ticket_id": "REQ200",
+    "subject": "JIRA access needed",
+    "description": "Sophie Durand requests edit access to JIRA boards for the Retail Banking transformation project.",
+    "entities": {
+      "user": "Sophie Durand",
+      "tool": "JIRA",
+      "project": "Retail Banking Transformation",
+      "access_type": "Edit"
+    }
+  }
+]
