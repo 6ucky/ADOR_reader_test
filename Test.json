@@ -1,0 +1,105 @@
+[
+  {
+    "ticket_id": "INC001",
+    "subject": "Can't access Tableau dashboards",
+    "description": "Sophie Lemoine from Finance is unable to open ESG Tableau dashboards since this morning. She gets a timeout error.",
+    "entities": {
+      "user": "Sophie Lemoine",
+      "department": "Finance",
+      "tool": "Tableau",
+      "dataset": "ESG",
+      "error": "Timeout"
+    }
+  },
+  {
+    "ticket_id": "INC002",
+    "subject": "VPN not working remotely",
+    "description": "Remote access via VPN fails for user jdupont@bnpparibas.com. Affects CRM and SharePoint access.",
+    "entities": {
+      "user": "jdupont@bnpparibas.com",
+      "system": "VPN",
+      "tools_impacted": ["CRM", "SharePoint"]
+    }
+  },
+  {
+    "ticket_id": "INC003",
+    "subject": "Risk dashboard very slow",
+    "description": "Reports on the Risk Management Dashboard are loading extremely slowly for users in the Market Risk team.",
+    "entities": {
+      "department": "Market Risk",
+      "tool": "Risk Management Dashboard",
+      "symptom": "Slow Performance"
+    }
+  },
+  {
+    "ticket_id": "REQ001",
+    "subject": "AD account locked",
+    "description": "Fatima Benali cannot log in due to an Active Directory account lockout. Please unlock the account.",
+    "entities": {
+      "user": "Fatima Benali",
+      "system": "Active Directory",
+      "issue_type": "Account Lock"
+    }
+  },
+  {
+    "ticket_id": "REQ002",
+    "subject": "Need JIRA access for project onboarding",
+    "description": "A new team member needs access to JIRA boards under the Payments Project workspace.",
+    "entities": {
+      "request_type": "Access",
+      "tool": "JIRA",
+      "project": "Payments Project"
+    }
+  },
+  {
+    "ticket_id": "INC004",
+    "subject": "500 error on internal HR site",
+    "description": "Employees report HTTP 500 errors when opening the HR portal. URL: https://hr.bnpparibas.com",
+    "entities": {
+      "error_code": "500",
+      "system": "HR Portal",
+      "url": "https://hr.bnpparibas.com"
+    }
+  },
+  {
+    "ticket_id": "INC005",
+    "subject": "Lotus Notes crashing on startup",
+    "description": "Lotus Notes crashes immediately after launch for several users in the Legal department.",
+    "entities": {
+      "application": "Lotus Notes",
+      "symptom": "Crash",
+      "department": "Legal"
+    }
+  },
+  {
+    "ticket_id": "REQ003",
+    "subject": "Grant access to Power BI dashboards",
+    "description": "Mickael Renaud requests access to the monthly compliance dashboards in Power BI.",
+    "entities": {
+      "user": "Mickael Renaud",
+      "tool": "Power BI",
+      "dashboard": "Compliance Monthly",
+      "request_type": "Access"
+    }
+  },
+  {
+    "ticket_id": "INC006",
+    "subject": "Email delivery delayed",
+    "description": "Several employees in the Audit department report delays in receiving external emails.",
+    "entities": {
+      "symptom": "Email Delay",
+      "department": "Audit",
+      "system": "Email"
+    }
+  },
+  {
+    "ticket_id": "INC007",
+    "subject": "SSO authentication failed",
+    "description": "Users can't log into the Intranet via SSO; error says 'token expired'.",
+    "entities": {
+      "system": "SSO",
+      "tool": "Intranet",
+      "error": "Token Expired"
+    }
+  }
+]
