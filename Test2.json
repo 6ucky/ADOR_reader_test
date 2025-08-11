@@ -44,3 +44,53 @@
     }
   }
 ]
+
+human_like_card = {
+    "type": "message",
+    "attachments": [
+        {
+            "contentType": "application/vnd.microsoft.card.adaptive",
+            "content": {
+                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                "type": "AdaptiveCard",
+                "version": "1.4",
+                "body": [
+                    {
+                        "type": "ColumnSet",
+                        "columns": [
+                            {
+                                "type": "Column",
+                                "width": "auto",
+                                "items": [
+                                    {
+                                        "type": "Image",
+                                        "url": "https://example.com/human-avatar.png",
+                                        "style": "Person",
+                                        "size": "Small"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Column",
+                                "width": "stretch",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "John Doe",
+                                        "weight": "Bolder"
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "This is a human-like message",
+                                        "wrap": True
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
+turn_context.send_activity(human_like_card)
