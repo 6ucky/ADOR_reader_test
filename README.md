@@ -58,3 +58,53 @@ Determine how this message relates to what was just discussed.
 ### IMPORTANT
 - Do NOT judge if the query is "informative" or vague. If the user says "Help me", "Printer", or "Outlook", it is still an IT_REQUEST_ISSUE (unless it's an explicit "new topic" command or an escalation). The chatbot logic will handle clarifying questions if needed. Stick strictly to intent and flow.
 - Ensure that the output strictly adheres to the provided JSON schema.
+image: docker:24
+
+services:
+  - name: docker:24-dind
+    command: ["--insecure-registry=registry-1.docker.io"]
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+
+  # Proxy
+  HTTP_PROXY:  $HTTP_PROXY
+  HTTPS_PROXY: $HTTPS_PROXY
+  NO_PROXY: localhost,127.0.0.1,docker,docker:2375
+
+  # CA
+  REQUESTS_CA_BUNDLE: $REQUESTS_CA_BUNDLE
+  SSL_CERT_FILE: $REQUESTS_CA_BUNDLE
+  CURL_CA_BUNDLE: $REQUESTS_CA_BUNDLE
+
+before_script:
+  # 1. Install CA for OS tools
+  - mkdir -p /usr/local/share/ca-certificates
+  - cp "$REQUESTS_CA_BUNDLE" /usr/local/share/ca-certificates/corp-ca.crt
+  - update-ca-certificates
+
+  # 2. Docker client proxy config
+  - mkdir -p ~/.docker
+  - |
+    cat <<EOF > ~/.docker/config.json
+    {
+      "proxies": {
+        "default": {
+          "httpProxy": "$HTTP_PROXY",
+          "httpsProxy": "$HTTPS_PROXY",
+          "noProxy": "$NO_PROXY"
+        }
+      }
+    }
+    EOF
+
+  # 3. Docker daemon trust ACR CA
+  - mkdir -p /etc/docker/certs.d/myregistry.azurecr.io
+  - cp "$REQUESTS_CA_BUNDLE" /etc/docker/certs.d/myregistry.azurecr.io/ca.crt
+
+  # 4. Login
+  - docker login myregistry.azurecr.io -u $ACR_USERNAME -p $ACR_PASSWORD
+
+script:
+  - docker build -t myregistry.azurecr.io/myapp:$CI_COMMIT_SHA .
+  - docker push myregistry.azurecr.io/myapp:$CI_COMMIT_SHA
